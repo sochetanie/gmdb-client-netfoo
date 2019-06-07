@@ -1,0 +1,48 @@
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+    padding: 0.5rem 1rem;
+    background: #111111;
+    color: #f2f2f2;
+}
+
+.navbar > a:first-child {
+  margin-left: 2%;
+  color: red;
+}
+
+.navbar > a:first-child:hover {
+  transform: scale(1.1);
+}
+
+.userAccess {
+  margin-right: 3%;
+}
+
+.userAccess > a+a {
+  margin-left: 10px;
+}
+
+input[type=search] {
+	background: #333333;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 120px;
+}
+input[type=search]:focus {
+	width: 400px;
+	background-color: #eeeeee;
+	border-color: #333;
+	border: solid 1px #fff;
+} 
+
+*:focus {
+    outline: none;
+}
+
+#userMovieList {
+  color: yellow !important; 
+}

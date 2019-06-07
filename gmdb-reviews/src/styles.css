@@ -1,0 +1,25 @@
+body {
+	background-color: black;
+}
+
+a {
+	cursor: pointer;
+}
+
+.auth {
+	/*margin:auto;*/
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-style:inherit;
+	padding:.8em;
+}
+
+#xxplaceholder{
+	margin:auto;	
+}
+
+label{
+	padding: 5px;
+}

@@ -1,0 +1,12 @@
+<form class="addReview" [formGroup]="addReviewForm" (ngSubmit)="addReview()">
+    <input placeholder="Title" class="title" formControlName="title" required />
+    <label *ngIf="addReviewForm.controls.title.invalid" class="alert alert-danger">Title is required</label>
+
+    <textarea rows="10" cols="100" name="subject" placeholder="Please enter text of your review" class="message" formControlName="description" required></textarea>
+    <label *ngIf="addReviewForm.controls.description.invalid" class="alert alert-danger">Description is required</label>
+
+    <input *ngIf="!success" name="submit" class="btn" type="submit" value="ADD" [disabled] = "!email" />
+    <label *ngIf="success" class="alert alert-success">Your review was added</label>
+    
+    <label *ngIf="!email" class="alert alert-danger">You need to be logged in to write a review</label>
+</form>

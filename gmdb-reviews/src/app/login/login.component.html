@@ -1,0 +1,26 @@
+<form id="login" [formGroup]="loginForm" class="auth" (ngSubmit)="authenticate()">
+  <div class='bold-line'></div>
+  <div class='container'>
+    <div class='window'>
+      <div class='overlay'></div>
+      <div class='content'>
+        <div class='welcome'>Welcome back :)</div>
+
+        <div class='input-fields'>
+          <input formControlName="userName" required type='text' placeholder='User Name' class='input-line full-width' />
+          <label  *ngIf="loginForm.controls.userName.invalid && loginForm.controls.userName.dirty" 
+          class="alert alert-danger">User Name is invalid</label>
+
+          <input formControlName="password" required type='password' placeholder='Password' class='input-line full-width' />
+          <label *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.dirty" 
+          class="alert alert-danger">password is invalid</label>
+        </div>
+
+        <button type="submit" value="Login" class='ghost-round full-width'>Login</button>
+        <label *ngIf="feedback !== ''" class="alert alert-danger">{{feedback}}</label>
+        
+      </div>
+    </div>
+  </div>
+</form>
+  

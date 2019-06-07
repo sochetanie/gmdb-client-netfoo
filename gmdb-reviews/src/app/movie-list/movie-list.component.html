@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col">
+    </div>
+  <div class="col-md-auto">
+    <img class="card-img" src="https://www.wallpaperup.com/uploads/wallpapers/2013/12/26/205901/e0389e2031c3b353637bb0c3c5739117-700.jpg" alt="Movie Collage">
+  </div>
+  <div class="col">
+  </div>
+</div>
+
+<div class="container">
+
+    <div *ngFor = 'let movie of movieList' class="movieCards">
+
+      <div class="movie-card">
+        <div class="movie-header backgroundIMG" 
+        [ngStyle]="{'background': 'url(' + movie.poster + ') no-repeat 0 0', 'background-size': 'cover'}">
+          <div class="header-icon-container">
+            <a routerLink='/details/{{movie.imdbid}}'><i class="fas fa-play"></i></a>
+          </div>
+        </div>
+        <div class="movie-content">
+          <div class="movie-content-header">
+              <h3 class="movie-title">{{movie?.title}}</h3>
+              <i class="fas fa-star " (click)="onClick()"
+                  [ngClass]="wasClicked ? 'text-warning' : 'text-muted'">
+              </i>
+          </div>
+          <div class="movie-info">
+            <div class="info-section">
+              <label>Released</label>
+              <span>{{movie?.year}}</span>
+            </div>
+            <div class="info-section">
+              <label>Rated</label>
+              <span>{{movie?.rated}}</span>
+            </div>
+            <div class="info-section">
+              <label>Country</label>
+              <span>{{movie?.country}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+</div>  

@@ -1,0 +1,62 @@
+<div class="content">
+  <div class="row" >
+
+    <div class="col-sm-6" [ngStyle]="{'background': 'url(' + movie?.poster + ') center no-repeat', 'background-size': '100% 100%'}">
+    </div>
+
+    <div class="col-sm-6">
+      <div class="movieInfo">
+
+        <h2>{{movie?.title}}</h2>
+        <p>{{movie?.plot}}</p>
+        
+        <p *ngIf="movie?.Released !== 'N/A'"><strong>Released:</strong>{{movie?.Released}}</p>
+        <p><strong>Genre: </strong>{{movie?.genre}}</p>
+        <p *ngIf="movie?.rated !== 'N/A'"><strong>Rated: </strong>{{movie?.rated}}</p>
+        <p><strong>Actors: </strong>{{movie?.actors}}</p>
+        <p *ngIf="movie?.director !== 'N/A'"><strong>Director: </strong>{{movie?.director}}</p>
+        <p *ngIf="movie?.writer !== 'N/A'"><strong>Writers: </strong>{{movie?.writer}}</p>
+        <!-- <p *ngIf="movie?.production !== undefined"><strong>Production: </strong>{{movie?.production}}</p> -->
+        <p><strong>Country: </strong>{{movie?.country}}</p>
+        <p><strong>Runtime: </strong>{{movie?.runtime}}</p>
+        <p><strong>Language: </strong>{{movie?.language}}</p>
+        <p *ngIf="movie?.awards !== 'N/A'"><strong>Awards: </strong>{{movie?.awards}}</p>
+        <!-- <p *ngIf="movie?.boxOffice"><strong>Box Office: </strong>{{movie?.boxOffice}}</p> -->
+
+        <!-- <h5 id="ratings">Ratings</h5>
+        <p><strong>IMDb Rating: </strong>{{movie?.imdbRating}}</p>
+        <p *ngIf="movie?.Ratings[0]?.Source"><strong>{{movie?.Ratings[0]?.Source}}: </strong>{{movie?.Ratings[0]?.Value}}</p>
+        <p *ngIf="movie?.Ratings[1]?.Source"><strong>{{movie?.Ratings[1]?.Source}}: </strong>{{movie?.Ratings[1]?.Value}}</p>
+        <p *ngIf="movie?.Ratings[2]?.Source"><strong>{{movie?.Ratings[2]?.Source}}: </strong>{{movie?.Ratings[2]?.Value}}</p> -->
+
+      </div>
+    </div>
+
+    <div class="col"></div>
+    <div class="col-8 btn">
+      <div class="btn-group-lg btn-group col align-self-center" role="group" aria-label="group of buttons">
+        <button (click)="toggleShowReviews()" (click)="getReviews()" id="bt" type="button" class="btn btn-outline-secondary">Reviews</button>
+        <button type="button" (click)="toggleAddReview()" class="btn btn-outline-warning" id="addReview">Add Review</button>
+        <button type="button" class="btn btn-outline-success" id="addToFavorites">Add to List</button>
+        <button type="button" class="btn btn-outline-info" id="backToSearch" (click)="goBack()">Back to Search</button>
+      </div>
+    </div>
+    <div class="col"></div>
+
+    <div class="col-8 showReviews">
+      <ng-container *ngIf="showAddReviewForm">
+        <reviewForm [movieId] = "id"></reviewForm>
+      </ng-container>
+    </div>
+
+    <div class="col-8 showReviews">
+        <ng-container *ngIf="showReviews">
+            <div *ngFor="let review of reviews">
+              <h5><strong>{{review?.email}}</strong>{{review?.title}}</h5>
+              <p>{{review?.description}}</p>
+            </div>
+        </ng-container>
+    </div>
+
+  </div>
+</div>

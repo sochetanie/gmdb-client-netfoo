@@ -1,0 +1,35 @@
+<form id="signup" class="auth" [formGroup]="formSignup" (ngSubmit)="signup()">
+    <div class='bold-line'></div>
+    <div class='container'>
+      <div class='window'>
+        <div class='overlay'></div>
+        <div class='content'>
+          <div class='welcome'>Hello There!</div>
+          <div class='subtitle'>*By signing up you agree to the ridiculously long terms that you didn't bother to read</div>
+  
+          <div class='input-fields'>
+            <!-- <input type='text' placeholder='Username' class='input-line full-width'></input> -->
+            <input formControlName="name" required type='name' placeholder='Name' class='input-line full-width' />
+            <input formControlName="userName" required type='userName' placeholder='User Name' class='input-line full-width' />
+            <input formControlName="email" required type='email' placeholder='Email' class='input-line full-width' />
+            <label *ngIf="formSignup.controls.email.invalid && formSignup.controls.email.dirty" class="alert alert-danger">
+              email is invalid
+            </label>
+  
+            <input formControlName="password" required type='password' placeholder='Password' class='input-line full-width' />
+            <label *ngIf="formSignup.controls.password.invalid && formSignup.controls.password.dirty" class="alert alert-danger">
+              Password must have at least six charaters
+            </label>
+            <input formControlName="confirmPassword" required type='password' placeholder='Confirm Password' class='input-line full-width' />
+            <label *ngIf="formSignup.controls.password.value !== formSignup.controls.confirmPassword.value" class="alert alert-danger">
+              Password confirmation doesn't match password
+            </label>
+            
+          </div>
+  
+          <button type="submit" value="signup" class='ghost-round full-width'>Create Account</button>
+          
+        </div>
+      </div>
+    </div>
+  </form>

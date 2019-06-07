@@ -1,0 +1,23 @@
+<div>
+  <nav class="navbar">
+    <a><h3 routerLink=''>NetFoo {{ title }}</h3></a>
+
+    <form [formGroup]='searchForm' class="form-inline"  >
+      <input formControlName="query" #box (keyup.enter)="onEnter(searchForm.controls.query.value)" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+    
+    <div class="userAccess" *ngIf="!verifyAuth()">
+      <a routerLink="/login"> Login </a>
+      <a routerLink="/signup"> SignUp </a>
+    </div>
+    
+    <div class="userAccess" *ngIf="verifyAuth()">
+      <a id="userMovieList">My Movie Lists</a>
+      <a>{{getUserEmail()}}</a>
+      <a (click)="logOut()"> Logout </a>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+  
+ </div>

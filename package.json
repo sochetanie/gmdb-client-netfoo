@@ -1,0 +1,19 @@
+{
+  "name": "gmdb-client-netfoo",
+  "version": "1.0.0",
+  "description": "Welcome to the gMDB client project. We're excited to have you build this project for us.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gSchool/gmdb-client-netfoo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gSchool/gmdb-client-netfoo/issues"
+  },
+  "homepage": "https://github.com/gSchool/gmdb-client-netfoo#readme"
+}

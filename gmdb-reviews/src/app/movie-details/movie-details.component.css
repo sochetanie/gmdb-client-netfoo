@@ -1,0 +1,70 @@
+.content {
+    margin: 5% 7% 8% 7%;
+}
+
+.col-sm-4 {
+    min-height: 350px;
+    min-width: 300px;
+}
+
+.col-sm-6 {
+    min-height: 650px;
+    height: auto;
+    color: white;
+}
+
+.movieInfo {
+    padding-left: 5%;
+}
+
+.btn-outline-warning > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.movieInfo > h2 {
+    text-align: center;
+    padding-bottom: 3%;
+    font-size: 2.5em;
+}
+
+.movieInfo > p:nth-child(2) { 
+    font-style: italic;
+    margin-left: 1%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.movieInfo > h5 {
+    text-align: center;
+}
+
+#reviews {
+    color: yellow;
+}
+
+#ratings {
+    color: red;
+    padding-top: 3%;
+}
+
+
+.col-8.btn {
+    margin-top: 3%;
+}
+
+strong {
+    color: #F5B7B1;
+    font-size: 1.1em;
+    padding-right:.5em
+}
+
+.showReviews {
+    margin: 1% 0 0 17%;
+    width: 100%;
+    color: white;
+}
+
+
